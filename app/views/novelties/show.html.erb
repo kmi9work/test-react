@@ -1,0 +1,24 @@
+<%= link_to "Back", '/' %>
+<div class="novelty">
+  <div class="title">
+    <%= @novelty.title %>
+  </div>
+  <div class="text">
+    <%= @novelty.text %>
+  </div>
+  <div class="category">
+    <%= @novelty.category.try(:title) or "No category" %>
+  </div>
+  <div class="author">
+    <%= @novelty.author.name %>
+  </div>
+  <div class="published">
+    <%= @novelty.published_at %>
+  </div>
+  <div class="source">
+    Источник: <%= link_to @novelty.source, @novelty.source_url %></a>
+  </div>
+  <div class="age">
+    Возрастная категория: <%= @novelty.age.try(:title) or Age.last.title %>
+  </div>
+</div>

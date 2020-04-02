@@ -1,0 +1,9 @@
+<%= javascript_tag do %>
+  var novelties = <%= raw(@novelties.to_json(include: [:category, :author, :age]))%>
+  var ages = <%= raw(@ages.to_json())%>
+  var categories = <%= raw(@categories.to_json())%>
+<% end %>
+<%= javascript_pack_tag 'Index' %>
+
+<div id="root"></div>
+
