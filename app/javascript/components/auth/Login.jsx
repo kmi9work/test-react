@@ -26,7 +26,7 @@ export default class Login extends Component{
     } = this.state;
     event.preventDefault();
     
-    axios.post("http://localhost:3000/sessions", {
+    axios.post(process.env.HOST+"/sessions", {
       author: {
         email: email,
         password: password

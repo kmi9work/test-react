@@ -13,7 +13,6 @@ export default class Index extends Component{
       loggedInStatus: "NOT_LOGGED_IN",
       author: ""
     }
-
     this.state.novelties = props.novelties;
 
     this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)

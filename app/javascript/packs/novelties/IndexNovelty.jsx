@@ -22,7 +22,7 @@ export default class IndexNovelty extends Component{
     novelty.is_editing = false
     let novelties = this.state.novelties;
     if (method == "delete"){
-      axios.delete("http://localhost:3000/novelties/"+id, 
+      axios.delete(process.env.HOST+"/novelties/"+id, 
                    {withCredentials: true}).then(response => {
         if (response.data.status === 'destroyed'){
           novelties = novelties.filter((n) => {return n.id != id})
@@ -33,7 +33,7 @@ export default class IndexNovelty extends Component{
       });
     }else if (method == "update"){
       axios
-        .patch("http://localhost:3000/novelties/"+id,
+        .patch(process.env.HOST+"/novelties/"+id,
           { novelty: novelty }, 
           {withCredentials: true})
         .then(response => {
@@ -51,7 +51,7 @@ export default class IndexNovelty extends Component{
         });
     }else{
       axios
-        .post("http://localhost:3000/novelties/",
+        .post(process.env.HOST+"/novelties/",
           { novelty: novelty }, 
           {withCredentials: true})
         .then(response => {

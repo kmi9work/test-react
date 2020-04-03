@@ -22,7 +22,7 @@ export default class Dashboard extends Component{
 
   checkLoginStatus() {
     axios
-      .get("http://localhost:3000/logged_in", { withCredentials: true })
+      .get(process.env.HOST+"/logged_in", { withCredentials: true })
       .then(response => {
         if         (response.data.logged_in && (this.props.loggedInStatus === "NOT_LOGGED_IN")){
           this.props.handleSuccessfulAuth(response.data);

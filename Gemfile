@@ -5,7 +5,6 @@ ruby '2.7.0'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'rack-cors', :require => 'rack/cors'
-gem 'kaminari', '~> 1.2'
 
 gem 'react-rails'
 

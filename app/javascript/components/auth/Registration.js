@@ -28,7 +28,7 @@ export default class Registration extends Component{
     } = this.state;
 
     event.preventDefault();
-    axios.post("http://localhost:3000/registrations", {
+    axios.post(process.env.HOST+"/registrations", {
       author: {
         name: name,
         email: email,
