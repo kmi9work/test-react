@@ -18,6 +18,18 @@ export default class Novelty extends Component{
     this.props.handleNoveltiesChange({}, id, "delete") //TODO check up
   }
 
+  renderButtons(){
+    if (this.props.author && this.props.novelty.author_id == this.props.author.id){
+      return(
+        <div className="col-12">
+          <button className="btn btn-primary btn-sm m-1" onClick={this.handleDelete} noveltyid={this.props.novelty.id}> DELETE </button>
+          <button className="btn btn-primary btn-sm m-1" onClick={this.props.handleEdit} noveltyid={this.props.novelty.id}> EDIT </button>
+        </div>
+      )
+    }
+    return null;
+  }
+
   render(){
     if (this.props.novelty.is_editing){
       return <EditNovelty 
@@ -42,10 +54,7 @@ export default class Novelty extends Component{
             {this.props.novelty.title}
           </a>
         </h3>
-        <div className="col-12">
-          <button className="btn btn-primary btn-sm m-1" onClick={this.handleDelete} noveltyid={this.props.novelty.id}> DELETE </button>
-          <button className="btn btn-primary btn-sm m-1" onClick={this.props.handleEdit} noveltyid={this.props.novelty.id}> EDIT </button>
-        </div>
+        {this.renderButtons()}
       </div>
     )// TODO href to js
   }
