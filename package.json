@@ -12,7 +12,11 @@
     "@rails/webpacker": "4.2.2",
     "axios": "^0.19.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "form-serialize": "^0.7.2",
+    "jest-enzyme": "^7.1.2",
+    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-autocomplete": "^1.8.1",
@@ -27,6 +31,23 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "babel-jest": "^25.2.6",
+    "jest": "^25.2.7",
+    "regenerator-runtime": "^0.13.5",
     "webpack-dev-server": "^3.10.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "jest": {
+    "roots": [
+      "test/javascript"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript/packs"
+    ],
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js"
   }
 }

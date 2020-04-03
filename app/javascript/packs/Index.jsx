@@ -5,7 +5,7 @@ import Dashboard from '../components/auth/Dashboard'
 
 import {BrowserRouter, Switch, Route, useHistory} from 'react-router-dom'
 
-class Index extends Component{
+export default class Index extends Component{
 
   constructor (props){
     super(props);
